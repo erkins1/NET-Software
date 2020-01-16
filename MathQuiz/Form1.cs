@@ -42,7 +42,6 @@ namespace MathQuiz
             dateLabel.Text = currDate.ToString("dd MMMM yyyy");
         }
 
-
         public void StartTheQuiz()
         {
             //Get random numbers
