@@ -8,14 +8,24 @@ namespace MegaDesk_Rogers
 {
     public class DeskQuote
     {
+        public Desk Desk { get; set; }
         public string CustomerName { get; set; }
         public int ShippingDays { get; set; }
-        private decimal BasePrice;
-        private decimal RateLargeDesk;
-        private decimal RatePerDrawer;
+        public enum ShippingDay
+        {
+            a3Days,
+            a5Days, 
+            a7Days,
+            a14Days
+        }
+
+        const decimal BASE_PRICE = 200;
+        private decimal RateLargeDesk = 1;
+        private decimal RatePerDrawer = 50;
 
         public decimal GetQuotePrice()
         {
+            /*
             //Get the Width, Depth, NumDrawers, MaterialType from the desk class
 
             //Find the size of the desk
@@ -78,6 +88,8 @@ namespace MegaDesk_Rogers
             }
 
             return QuotePrice;
+            */
+            return 0;
         }
 
 

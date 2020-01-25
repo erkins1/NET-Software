@@ -23,8 +23,15 @@ namespace MegaDesk_Rogers
             //This opens the new form
             var addNewQuoteForm = new AddQuote();
             //Tag this object so that it can open when another window is opened
+            addNewQuoteForm.Tag = this;
             addNewQuoteForm.Show();
             Hide();
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            Hide();
+            Application.Exit();
         }
     }
 }
