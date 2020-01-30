@@ -14,14 +14,23 @@ namespace MegaDesk_Rogers
         public enum ShippingDay
         {
             a3Days,
-            a5Days, 
+            a5Days,
             a7Days,
             a14Days
         }
 
-        const decimal BASE_PRICE = 200;
-        private decimal RateLargeDesk = 1;
-        private decimal RatePerDrawer = 50;
+        const decimal BASE_PRICE = 200.00M;
+        const decimal RateLargeDesk = 1.00M;
+        const decimal RatePerDrawer = 50.00M;
+
+        Dictionary<string, decimal> materialPrices = new Dictionary<string, decimal>()
+        {
+            {"Oak", 200.00M },
+            {"Laminate", 100.00M },
+            {"Pine", 50.00M },
+            {"Rosewood", 300.00M },
+            {"Veneer", 125.00M }
+            };
 
         public decimal GetQuotePrice()
         {
@@ -43,19 +52,19 @@ namespace MegaDesk_Rogers
             switch (MaterialType)
             {
                 case "Oak":
-                    QuotePrice += 200;
+                    QuotePrice += materialPrices.Oak;
                     break;
                 case "Laminate":
-                    QuotePrice += 100;
+                    QuotePrice += materialPrices.Laminate;
                     break;
                 case "Pine":
-                    QuotePrice += 50;
+                    QuotePrice += materialPrices.Pine;
                     break;
                 case "Rosewood":
-                    QuotePrice += 300;
+                    QuotePrice += materialPrices.Rosewood;
                     break;
                 case "Veneer":
-                    QuotePrice += 125;
+                    QuotePrice += materialPrices.Veneer;
                     break;
             }
             //Add the price adjustment for the Rush Order
