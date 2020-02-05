@@ -50,7 +50,9 @@ namespace MegaDesk_Rogers
             //Add the price adjustment for the drawers
             QuotePrice += (NumDrawers * RatePerDrawer);
             //Add the price adjustment for the surface material
-            switch (MaterialType.ToString())
+            QuotePrice += materialPrices[MaterialType.ToString()];      //Does this work? Putting the string of the Enum as the key in the dictionary?
+
+            /*switch (MaterialType.ToString())
             {
                 case "Oak":
                     QuotePrice += materialPrices["Oak"];
@@ -67,7 +69,7 @@ namespace MegaDesk_Rogers
                 case "Veneer":
                     QuotePrice += materialPrices["Veneer"];
                     break;
-            }
+            }*/
 
             //Add the price adjustment for the Rush Order
             //Build the rushOrder prices array

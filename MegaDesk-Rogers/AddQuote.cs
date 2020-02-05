@@ -69,6 +69,8 @@ namespace MegaDesk_Rogers
 
                 //call the saveQuotes method and pass the new deskQuote object
                 saveQuote(newQuote);
+                //Open the display quote form? Or is this supposed to be saved as a result of viewing the quote?
+
 
             }
             catch (Exception ex)
@@ -88,7 +90,7 @@ namespace MegaDesk_Rogers
             var quotes = new List<DeskQuote>();
             if (!File.Exists(@path))
             {
-                //create file?
+                //create file? If I don't need any code here, then this is just a single if to load the file into the list if it exists
             }
             else    //Loads the file
             {
@@ -108,7 +110,7 @@ namespace MegaDesk_Rogers
 
 
         private void enableAddQuote()
-        {
+        {   //Enables the Add Quote button only when all the fields are filled out correctly
             if (txtCustName.Text != "" && cmbMaterialType.SelectedIndex >= 0 && cmbShipping.SelectedIndex >= 0)
             {
                 btnAddQuote.Enabled = true;
