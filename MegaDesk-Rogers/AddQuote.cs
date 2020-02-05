@@ -72,6 +72,7 @@ namespace MegaDesk_Rogers
             catch (Exception ex)
             {
                 //catch to make sure that all the fields are filled in
+                Console.WriteLine("ERROR");
                 Console.WriteLine(ex.Message);
             }
 
