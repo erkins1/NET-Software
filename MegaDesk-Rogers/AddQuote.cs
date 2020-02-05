@@ -36,6 +36,8 @@ namespace MegaDesk_Rogers
             cmbShipping.SelectedIndex = -1;
         }
 
+        
+
         private void btnCancel_Click(object sender, EventArgs e)
         {
             closeThisForm();
@@ -102,6 +104,29 @@ namespace MegaDesk_Rogers
             string jsonQuotes = JsonConvert.SerializeObject(quotes);
             //save the JObject to the quotes.json file
             File.WriteAllText(@path, jsonQuotes);
+        }
+
+
+        private void enableAddQuote()
+        {
+            if (txtCustName.Text != "" && cmbMaterialType.SelectedIndex >= 0 && cmbShipping.SelectedIndex >= 0)
+            {
+                btnAddQuote.Enabled = true;
+            }
+        }
+        private void txtCustName_TextChanged(object sender, EventArgs e)
+        {
+            enableAddQuote();
+        }
+
+        private void cmbMaterialType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            enableAddQuote();
+        }
+
+        private void cmbShipping_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            enableAddQuote();
         }
     }
 }
