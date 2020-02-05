@@ -57,17 +57,28 @@ namespace MegaDesk_Rogers
             try
             {
                 //Get all the variables from the form and add to the DeskQuote object
+                DeskQuote newQuote = new DeskQuote();
+                newQuote.CustomerName = txtCustName.Text;
+                newQuote.Width = numWidth.Value;
+                newQuote.Depth = numDepth.Value;
+                newQuote.NumDrawers = numDrawers.Value;
+                newQuote.MaterialType = (Desk.DesktopMaterial)cmbMaterialType.SelectedItem;
+                newQuote.ShippingDays = (DeskQuote.ShippingDay)cmbShipping.SelectedItem;
+
                 //call the saveQuotes method and pass the new deskQuote object
+                saveQuote(newQuote);
+
             }
             catch (Exception e)
             {
                 //catch to make sure that all the fields are filled in
+                Console.WriteLine(e.Message);
             }
 
 
         }
 
-        private void SaveQuote(/*DeskQuote object*/)
+        private void saveQuote(DeskQuote newQuote)
         {
             //create variable for the list of DeskQuotes
             //List<DeskQuote> quotes

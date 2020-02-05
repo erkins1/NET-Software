@@ -20,9 +20,9 @@ namespace MegaDesk_Rogers
         }
 
         //Type prop and then hit Tab twice
-        public int Width { get; set; }
-        public int Depth { get; set; }
-        public int NumDrawers { get; set; }
+        public decimal Width { get; set; }
+        public decimal Depth { get; set; }
+        public decimal NumDrawers { get; set; }
         public DesktopMaterial MaterialType { get; set; }
 
 
