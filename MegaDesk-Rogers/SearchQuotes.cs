@@ -16,6 +16,13 @@ namespace MegaDesk_Rogers
         public SearchQuotes()
         {
             InitializeComponent();
+
+            //Puts the desktop material types in the combo box
+            List<Desk.DesktopMaterial> materialTypes =
+                Enum.GetValues(typeof(Desk.DesktopMaterial))
+                    .Cast<Desk.DesktopMaterial>().ToList();
+            cmbSearchMaterial.DataSource = materialTypes;
+            cmbSearchMaterial.SelectedIndex = -1;
         }
     }
 }

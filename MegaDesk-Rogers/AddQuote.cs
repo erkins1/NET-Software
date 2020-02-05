@@ -49,5 +49,15 @@ namespace MegaDesk_Rogers
             mainMenuForm.Show();
             Hide();
         }
+
+        private void btnAddQuote_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void SaveQuote(List<DeskQuote> quotes)
+        {
+
+        }
     }
 }

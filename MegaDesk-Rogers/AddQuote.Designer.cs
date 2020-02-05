@@ -165,6 +165,7 @@
             this.btnAddQuote.TabIndex = 8;
             this.btnAddQuote.Text = "Add Quote";
             this.btnAddQuote.UseVisualStyleBackColor = true;
+            this.btnAddQuote.Click += new System.EventHandler(this.btnAddQuote_Click);
             // 
             // label5
             // 

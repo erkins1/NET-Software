@@ -16,6 +16,8 @@ namespace MegaDesk_Rogers
         public ViewQuotes()
         {
             InitializeComponent();
+
+            string json = File.ReadAllText("filename");
         }
     }
 }
