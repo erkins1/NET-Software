@@ -69,10 +69,10 @@ namespace MegaDesk_Rogers
                 saveQuote(newQuote);
 
             }
-            catch (Exception e)
+            catch (Exception ex)
             {
                 //catch to make sure that all the fields are filled in
-                Console.WriteLine(e.Message);
+                Console.WriteLine(ex.Message);
             }
 
 
@@ -81,7 +81,7 @@ namespace MegaDesk_Rogers
         private void saveQuote(DeskQuote newQuote)
         {
             //create variable for the list of DeskQuotes
-            //List<DeskQuote> quotes
+            var quotes = new List<DeskQuote>();
             if (!File.Exists(@"quotes.json"))
             {
                 //create file
@@ -93,6 +93,7 @@ namespace MegaDesk_Rogers
             }
 
             //add the new quote to the list of DeskQuotes
+            quotes.Add(newQuote);
             //serialize the list of DeskQuotes to a JObject
             //save the JObject to the quotes.json file
             

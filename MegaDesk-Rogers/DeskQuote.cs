@@ -14,10 +14,10 @@ namespace MegaDesk_Rogers
         public ShippingDay ShippingDays { get; set; }
         public enum ShippingDay
         {
-            a3Days,
-            a5Days,
-            a7Days,
-            a14Days
+            a3Days = 3,
+            a5Days = 5,
+            a7Days = 7,
+            a14Days = 14
         }
 
         const decimal BasePrice = 200.00M;
@@ -36,7 +36,7 @@ namespace MegaDesk_Rogers
         public decimal GetQuotePrice()
         {
             
-            //Get the Width, Depth, NumDrawers, MaterialType from the form?
+            //Make sure all the variables have a value? or just a try catch block
 
             //Find the size of the desk
             decimal deskSize = Width * Depth;
@@ -89,7 +89,7 @@ namespace MegaDesk_Rogers
             Console.WriteLine(prices.ToString());
 
             //Choose the correct part of the array
-            switch (ShippingDays)
+            switch ((int)ShippingDays)
             {
                 case 3:
                     x = 0;
@@ -100,8 +100,11 @@ namespace MegaDesk_Rogers
                 case 7:
                     x = 2;
                     break;
+                case 14:
+                    x = 4;
+                    break;
                 default:
-
+                    x = 4;
                     break;
             }
             if (deskSize < 1000)
@@ -111,7 +114,8 @@ namespace MegaDesk_Rogers
             else
                 y = 2;
 
-            QuotePrice += prices[y, x];
+            if (x < 4)
+                QuotePrice += prices[y, x];
 
             return QuotePrice;
             
