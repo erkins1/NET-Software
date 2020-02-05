@@ -80,23 +80,27 @@ namespace MegaDesk_Rogers
 
         private void saveQuote(DeskQuote newQuote)
         {
+            string path = "quotes.json";
             //create variable for the list of DeskQuotes
             var quotes = new List<DeskQuote>();
-            if (!File.Exists(@"quotes.json"))
+            if (!File.Exists(@path))
             {
-                //create file
+                //create file?
             }
-            else
+            else    //Loads the file
             {
                 //read the file into a variable
+                string json = File.ReadAllText(@path);
                 //deserialize the json into a list of DeskQuotes
+                quotes = JsonConvert.DeserializeObject<List<DeskQuote>>(json);
             }
 
             //add the new quote to the list of DeskQuotes
             quotes.Add(newQuote);
             //serialize the list of DeskQuotes to a JObject
+            string jsonQuotes = JsonConvert.SerializeObject(quotes);
             //save the JObject to the quotes.json file
-            
+            File.WriteAllText(@path, jsonQuotes);
         }
     }
 }
