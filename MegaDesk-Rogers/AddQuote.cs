@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
+using Newtonsoft.Json;
 
 namespace MegaDesk_Rogers
 {
@@ -52,11 +54,36 @@ namespace MegaDesk_Rogers
 
         private void btnAddQuote_Click(object sender, EventArgs e)
         {
+            try
+            {
+                //Get all the variables from the form and add to the DeskQuote object
+                //call the saveQuotes method and pass the new deskQuote object
+            }
+            catch (Exception e)
+            {
+                //catch to make sure that all the fields are filled in
+            }
+
 
         }
 
-        private void SaveQuote(List<DeskQuote> quotes)
+        private void SaveQuote(/*DeskQuote object*/)
         {
+            //create variable for the list of DeskQuotes
+            //List<DeskQuote> quotes
+            if (!File.Exists(@"quotes.json"))
+            {
+                //create file
+            }
+            else
+            {
+                //read the file into a variable
+                //deserialize the json into a list of DeskQuotes
+            }
+
+            //add the new quote to the list of DeskQuotes
+            //serialize the list of DeskQuotes to a JObject
+            //save the JObject to the quotes.json file
 
         }
     }
