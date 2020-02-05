@@ -60,6 +60,7 @@
             this.cmbSearchMaterial.Name = "cmbSearchMaterial";
             this.cmbSearchMaterial.Size = new System.Drawing.Size(121, 28);
             this.cmbSearchMaterial.TabIndex = 2;
+            this.cmbSearchMaterial.SelectedIndexChanged += new System.EventHandler(this.cmbSearchMaterial_SelectedIndexChanged);
             // 
             // SearchQuotes
             // 

@@ -24,5 +24,45 @@ namespace MegaDesk_Rogers
             cmbSearchMaterial.DataSource = materialTypes;
             cmbSearchMaterial.SelectedIndex = -1;
         }
+
+        private void cmbSearchMaterial_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ComboBox search = (ComboBox)sender;
+
+            if (ComboBox.SelectedIndex < 0)
+            {
+                // Renew Grid
+                loadGrid();
+            }
+            else
+            {
+                // Use value to search
+                loadGrid((Desk.DesktopMaterial)search.SelectedValue);
+            }
+        } 
+
+        private void loadGrid()
+        {
+            var quotesFile = @"quotes.json";
+
+            using (StreamReader = new StreamReader(quotesFile))
+            {
+                //Load quotes
+                string quotes = reader.ReadToEnd();
+                List<DeskQuote> deskQuotes = JsonConvert.DeserializeObject<List<DeskQuote>>;
+
+                dataGridView1.DataSource = deskQuotes.Select(d => new
+                {
+                    Date = d.QuoteDate,
+                    Customer = d.CustomerName,
+                    Depth = d.Desk.Depth,
+                    Width = d.Desk.Width,
+                    Drawers = d.Desk.NumberOfDrawers,
+                    SurfaceMaterial = d.Desk.MaterialType,
+                    DeliveryType = d.DeliveryType,
+                    QuoteAmount = d.GetQuotePrice.ToString("c")
+                }).ToList();
+            }
+        }
     }
 }
