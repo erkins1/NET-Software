@@ -84,7 +84,7 @@ namespace MegaDesk_Rogers
             //add the new quote to the list of DeskQuotes
             //serialize the list of DeskQuotes to a JObject
             //save the JObject to the quotes.json file
-
+            
         }
     }
 }
