@@ -86,6 +86,9 @@
     <EmbeddedResource Include="AddQuote.resx">
       <DependentUpon>AddQuote.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DisplayQuote.resx">
+      <DependentUpon>DisplayQuote.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainMenu.resx">
       <DependentUpon>MainMenu.cs</DependentUpon>
     </EmbeddedResource>
@@ -105,6 +108,7 @@
     <EmbeddedResource Include="ViewQuotes.resx">
       <DependentUpon>ViewQuotes.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="bin\Debug\quotes.json" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

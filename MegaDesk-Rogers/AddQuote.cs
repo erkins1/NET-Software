@@ -14,8 +14,7 @@ namespace MegaDesk_Rogers
 {
     public partial class AddQuote : Form
     {
-                     
-
+          
 
         public AddQuote()
         {
@@ -36,6 +35,8 @@ namespace MegaDesk_Rogers
             cmbShipping.SelectedIndex = -1;
         }
 
+        
+
         private void btnCancel_Click(object sender, EventArgs e)
         {
             closeThisForm();
@@ -52,51 +53,65 @@ namespace MegaDesk_Rogers
             Hide();
         }
 
+        //public DeskQuote newQuote = new DeskQuote();
+
         private void btnAddQuote_Click(object sender, EventArgs e)
         {
-            try
-            {
+            //try
+            //{
                 //Get all the variables from the form and add to the DeskQuote object
                 DeskQuote newQuote = new DeskQuote();
                 newQuote.CustomerName = txtCustName.Text;
                 newQuote.Width = numWidth.Value;
                 newQuote.Depth = numDepth.Value;
                 newQuote.NumDrawers = numDrawers.Value;
-                newQuote.MaterialType = (Desk.DesktopMaterial)cmbMaterialType.SelectedItem;
+                newQuote.MaterialType = (DeskQuote.DesktopMaterial)cmbMaterialType.SelectedItem;
                 newQuote.ShippingDays = (DeskQuote.ShippingDay)cmbShipping.SelectedItem;
 
                 //call the saveQuotes method and pass the new deskQuote object
-                saveQuote(newQuote);
-
+                //saveQuote(newQuote);
+                //Open the display quote form? Or is this supposed to be saved as a result of viewing the quote?
+                
+                var displayQuoteForm = new DisplayQuote();
+                displayQuoteForm.currQuote = newQuote;
+                displayQuoteForm.Show();
+                Hide();
+            Console.WriteLine("Pause");
+            /*
             }
             catch (Exception ex)
             {
                 //catch to make sure that all the fields are filled in
+                Console.WriteLine("ERROR");
                 Console.WriteLine(ex.Message);
-            }
-
+            }*/
+            
 
         }
 
-        private void saveQuote(DeskQuote newQuote)
-        {
-            //create variable for the list of DeskQuotes
-            var quotes = new List<DeskQuote>();
-            if (!File.Exists(@"quotes.json"))
-            {
-                //create file
-            }
-            else
-            {
-                //read the file into a variable
-                //deserialize the json into a list of DeskQuotes
-            }
+        
 
-            //add the new quote to the list of DeskQuotes
-            quotes.Add(newQuote);
-            //serialize the list of DeskQuotes to a JObject
-            //save the JObject to the quotes.json file
-            
+
+        private void enableAddQuote()
+        {   //Enables the Add Quote button only when all the fields are filled out correctly
+            if (txtCustName.Text != "" && cmbMaterialType.SelectedIndex >= 0 && cmbShipping.SelectedIndex >= 0)
+            {
+                btnAddQuote.Enabled = true;
+            }
+        }
+        private void txtCustName_TextChanged(object sender, EventArgs e)
+        {
+            enableAddQuote();
+        }
+
+        private void cmbMaterialType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            enableAddQuote();
+        }
+
+        private void cmbShipping_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            enableAddQuote();
         }
     }
 }

@@ -28,6 +28,7 @@ namespace MegaDesk_Rogers
         
         private void cmbSearchMaterial_SelectedIndexChanged(object sender, EventArgs e)
         {
+            
             ComboBox search = (ComboBox)sender;
 
             if (search.SelectedIndex < 0)

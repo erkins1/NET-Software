@@ -155,9 +155,11 @@
             this.cmbMaterialType.Name = "cmbMaterialType";
             this.cmbMaterialType.Size = new System.Drawing.Size(121, 28);
             this.cmbMaterialType.TabIndex = 7;
+            this.cmbMaterialType.SelectedIndexChanged += new System.EventHandler(this.cmbMaterialType_SelectedIndexChanged);
             // 
             // btnAddQuote
             // 
+            this.btnAddQuote.Enabled = false;
             this.btnAddQuote.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddQuote.Location = new System.Drawing.Point(193, 298);
             this.btnAddQuote.Name = "btnAddQuote";
@@ -185,6 +187,7 @@
             this.cmbShipping.Name = "cmbShipping";
             this.cmbShipping.Size = new System.Drawing.Size(121, 28);
             this.cmbShipping.TabIndex = 10;
+            this.cmbShipping.SelectedIndexChanged += new System.EventHandler(this.cmbShipping_SelectedIndexChanged);
             // 
             // label6
             // 
@@ -203,6 +206,7 @@
             this.txtCustName.Name = "txtCustName";
             this.txtCustName.Size = new System.Drawing.Size(200, 26);
             this.txtCustName.TabIndex = 12;
+            this.txtCustName.TextChanged += new System.EventHandler(this.txtCustName_TextChanged);
             // 
             // btnCancel
             // 
