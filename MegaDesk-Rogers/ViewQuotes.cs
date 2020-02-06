@@ -17,7 +17,7 @@ namespace MegaDesk_Rogers
         {
             InitializeComponent();
 
-            string json = File.ReadAllText("filename");
+           /* string json = File.ReadAllText("filename");*/
         }
     }
 }

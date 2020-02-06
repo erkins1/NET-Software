@@ -25,12 +25,12 @@ namespace MegaDesk_Rogers
             cmbSearchMaterial.DataSource = materialTypes;
             cmbSearchMaterial.SelectedIndex = -1;
         }
-
+        
         private void cmbSearchMaterial_SelectedIndexChanged(object sender, EventArgs e)
         {
             ComboBox search = (ComboBox)sender;
 
-            if (ComboBox.SelectedIndex < 0)
+            if (search.SelectedIndex < 0)
             {
                 // Renew Grid
                 loadGrid();
@@ -44,7 +44,10 @@ namespace MegaDesk_Rogers
 
         private void loadGrid()
         {
-            var quotesFile = @"quotes.json";
+            
+
+           /*
+            *var quotesFile = @"quotes.json";
 
             using (StreamReader = new StreamReader(quotesFile))
             {
@@ -63,7 +66,7 @@ namespace MegaDesk_Rogers
                     DeliveryType = d.DeliveryType,
                     QuoteAmount = d.GetQuotePrice.ToString("c")
                 }).ToList();
-            }
-        }
+            }*/
+        } 
     }
 }
