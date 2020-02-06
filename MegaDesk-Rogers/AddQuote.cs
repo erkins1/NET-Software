@@ -36,12 +36,10 @@ namespace MegaDesk_Rogers
         }
 
         
-
         private void btnCancel_Click(object sender, EventArgs e)
         {
             closeThisForm();
         }
-        
         private void AddQuote_FormClosing(object sender, FormClosingEventArgs e)
         {
             closeThisForm();
@@ -52,8 +50,6 @@ namespace MegaDesk_Rogers
             Tag.Show();
             Hide();
         }
-
-        //public DeskQuote newQuote = new DeskQuote();
 
         private void btnAddQuote_Click(object sender, EventArgs e)
         {
@@ -68,13 +64,11 @@ namespace MegaDesk_Rogers
                 newQuote.MaterialType = (DeskQuote.DesktopMaterial)cmbMaterialType.SelectedItem;
                 newQuote.ShippingDays = (DeskQuote.ShippingDay)cmbShipping.SelectedItem;
 
-                //call the saveQuotes method and pass the new deskQuote object
-                //saveQuote(newQuote);
-                //Open the display quote form? Or is this supposed to be saved as a result of viewing the quote?
-                
+                //Open the display quote form? Or is this supposed to be saved as a result of viewing the quote?                
                 var displayQuoteForm = new DisplayQuote();
                 displayQuoteForm.currQuote = newQuote;
-            displayQuoteForm.addQuoteFrm = this;
+                displayQuoteForm.Tag = this;
+                displayQuoteForm.MMTag = Tag;
                 displayQuoteForm.Show();
                 Hide();
             
@@ -90,8 +84,6 @@ namespace MegaDesk_Rogers
 
         }
 
-        
-
 
         private void enableAddQuote()
         {   //Enables the Add Quote button only when all the fields are filled out correctly
@@ -104,12 +96,10 @@ namespace MegaDesk_Rogers
         {
             enableAddQuote();
         }
-
         private void cmbMaterialType_SelectedIndexChanged(object sender, EventArgs e)
         {
             enableAddQuote();
         }
-
         private void cmbShipping_SelectedIndexChanged(object sender, EventArgs e)
         {
             enableAddQuote();

@@ -15,8 +15,9 @@ namespace MegaDesk_Rogers
     public partial class DisplayQuote : Form
     {
         public DeskQuote currQuote = new DeskQuote();
-        public AddQuote addQuoteFrm; 
-        
+        public AddQuote Tag { get; set; } 
+        public MainMenu MMTag { get; set; }
+
         public DisplayQuote()
         {
             InitializeComponent();
@@ -80,11 +81,10 @@ namespace MegaDesk_Rogers
             //save the JObject to the quotes.json file
             File.WriteAllText(@path, jsonQuotes);
 
-            closeThisForm();
+            closeToMain();
         }
 
-        //This will either be called from save quote or everytime a value changes
-        /*
+        /*This will either be called from save quote or everytime a value changes
         private void updateQuote()  
         {
             currQuote.CustomerName = txtCustName.Text;
@@ -113,8 +113,14 @@ namespace MegaDesk_Rogers
         private void closeThisForm()
         {
             //var mainMenuForm = new MainMenu();
-            addQuoteFrm.Show();
-            Close();
+            Tag.Show();
+            Hide();
+        }
+        private void closeToMain()
+        {
+            //also unload the AddQuote?
+            MMTag.Show();
+            Hide();
         }
     }
 }
