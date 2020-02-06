@@ -252,7 +252,7 @@
             this.Controls.Add(this.label1);
             this.Name = "AddQuote";
             this.Text = "Add Quote";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AddQuote_FormClosing);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.AddQuote_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.numWidth)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numDepth)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numDrawers)).EndInit();

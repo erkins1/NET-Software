@@ -17,11 +17,10 @@ namespace MegaDesk_Rogers
             InitializeComponent();
         }
 
-
         private void btnOpenAddQuote_Click(object sender, EventArgs e)
         {
             //This opens the new form
-            var addNewQuoteForm = new AddQuote();
+            var addNewQuoteForm = new AddQuote(this);
             //Tag this object so that it can open when another window is opened
             addNewQuoteForm.Tag = this;
             addNewQuoteForm.Show();

@@ -15,10 +15,12 @@ namespace MegaDesk_Rogers
     public partial class AddQuote : Form
     {
 
-        public MainMenu Tag { get; set; }
-        public AddQuote()
+        private Form MainMenuTag;
+        public AddQuote(Form pform)
         {
             InitializeComponent();
+
+            this.MainMenuTag = pform;
 
             //Puts the desktop material types in the combo box
             List<Desk.DesktopMaterial> materialTypes =
@@ -35,22 +37,6 @@ namespace MegaDesk_Rogers
             cmbShipping.SelectedIndex = -1;
         }
 
-        
-        private void btnCancel_Click(object sender, EventArgs e)
-        {
-            closeThisForm();
-        }
-        private void AddQuote_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            closeThisForm();
-        }
-        private void closeThisForm()
-        {
-            //var mainMenuForm = new MainMenu();
-            Tag.Show();
-            Hide();
-        }
-
         private void btnAddQuote_Click(object sender, EventArgs e)
         {
             //try
@@ -65,10 +51,10 @@ namespace MegaDesk_Rogers
                 newQuote.ShippingDays = (DeskQuote.ShippingDay)cmbShipping.SelectedItem;
 
                 //Open the display quote form? Or is this supposed to be saved as a result of viewing the quote?                
-                var displayQuoteForm = new DisplayQuote();
+                var displayQuoteForm = new DisplayQuote(MainMenuTag);
                 displayQuoteForm.currQuote = newQuote;
                 displayQuoteForm.Tag = this;
-                displayQuoteForm.MMTag = Tag;
+                
                 displayQuoteForm.Show();
                 Hide();
             
@@ -103,6 +89,15 @@ namespace MegaDesk_Rogers
         private void cmbShipping_SelectedIndexChanged(object sender, EventArgs e)
         {
             enableAddQuote();
+        }
+
+        private void AddQuote_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            ((Form)Tag).Show();
+        }
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

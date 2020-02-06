@@ -15,12 +15,14 @@ namespace MegaDesk_Rogers
     public partial class DisplayQuote : Form
     {
         public DeskQuote currQuote = new DeskQuote();
-        public AddQuote Tag { get; set; } 
-        public MainMenu MMTag { get; set; }
+        private Form MainMenuTag;
 
-        public DisplayQuote()
+        public DisplayQuote(Form pForm)
         {
             InitializeComponent();
+
+            this.MainMenuTag = pForm;
+
             //Puts the desktop material types in the combo box
             List<Desk.DesktopMaterial> materialTypes =
                 Enum.GetValues(typeof(Desk.DesktopMaterial))
@@ -102,25 +104,18 @@ namespace MegaDesk_Rogers
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            closeThisForm();
+            Close();
         }
 
-        private void DisplayQuote_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            closeThisForm();
-        }
-
-        private void closeThisForm()
-        {
-            //var mainMenuForm = new MainMenu();
-            Tag.Show();
-            Hide();
-        }
         private void closeToMain()
         {
-            //also unload the AddQuote?
-            MMTag.Show();
-            Hide();
+            Close();
+            MainMenuTag.Show();
+        }
+
+        private void DisplayQuote_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            ((Form)Tag).Show();
         }
     }
 }

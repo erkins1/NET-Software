@@ -279,7 +279,7 @@
             this.Controls.Add(this.label1);
             this.Name = "DisplayQuote";
             this.Text = "DisplayQuote";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.DisplayQuote_FormClosing);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.DisplayQuote_FormClosed);
             this.Shown += new System.EventHandler(this.DisplayQuote_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.numDrawers)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numDepth)).EndInit();
