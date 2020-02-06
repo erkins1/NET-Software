@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 
+
 namespace MegaDesk_Rogers
 {
     public partial class ViewQuotes : Form
@@ -17,8 +18,31 @@ namespace MegaDesk_Rogers
         public ViewQuotes()
         {
             InitializeComponent();
+            loadGrid();
+            
+        }
 
-           /* string json = File.ReadAllText("filename");*/
+        private void loadGrid()
+        {
+
+            var quotesFile = "quotes.json";
+
+            string json = File.ReadAllText(@quotesFile);
+
+            List<DeskQuote> deskQuotes = JsonConvert.DeserializeObject<List<DeskQuote>>(json);
+
+            dtblViewQuotes.DataSource = deskQuotes.Select(d => new
+                {
+                    Date = d.QuoteDate,
+                    Customer = d.CustomerName,
+                    Depth = d.Desk.Depth,
+                    Width = d.Desk.Width,
+                    Drawers = d.Desk.NumDrawers,
+                    SurfaceMaterial = d.Desk.MaterialType,
+                    DeliveryType = d.ShippingDays,
+                    QuoteAmount = d.GetQuotePrice().ToString("c")
+                }).ToList();
+            }
         }
     }
 }
