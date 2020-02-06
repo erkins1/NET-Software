@@ -15,7 +15,7 @@ namespace MegaDesk_Rogers
     public partial class DisplayQuote : Form
     {
         public DeskQuote currQuote = new DeskQuote();
-         
+        public AddQuote addQuoteFrm; 
         
         public DisplayQuote()
         {
@@ -112,9 +112,9 @@ namespace MegaDesk_Rogers
 
         private void closeThisForm()
         {
-            var mainMenuForm = new MainMenu();
-            mainMenuForm.Show();
-            Hide();
+            //var mainMenuForm = new MainMenu();
+            addQuoteFrm.Show();
+            Close();
         }
     }
 }

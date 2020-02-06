@@ -14,8 +14,8 @@ namespace MegaDesk_Rogers
 {
     public partial class AddQuote : Form
     {
-          
 
+        public MainMenu Tag { get; set; }
         public AddQuote()
         {
             InitializeComponent();
@@ -48,8 +48,8 @@ namespace MegaDesk_Rogers
         }
         private void closeThisForm()
         {
-            var mainMenuForm = new MainMenu();
-            mainMenuForm.Show();
+            //var mainMenuForm = new MainMenu();
+            Tag.Show();
             Hide();
         }
 
@@ -74,6 +74,7 @@ namespace MegaDesk_Rogers
                 
                 var displayQuoteForm = new DisplayQuote();
                 displayQuoteForm.currQuote = newQuote;
+            displayQuoteForm.addQuoteFrm = this;
                 displayQuoteForm.Show();
                 Hide();
             
