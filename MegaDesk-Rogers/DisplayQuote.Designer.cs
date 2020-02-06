@@ -70,6 +70,7 @@
             this.btnCancel.TabIndex = 28;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // txtCustName
             // 
@@ -110,7 +111,6 @@
             // 
             // btnSaveQuote
             // 
-            this.btnSaveQuote.Enabled = false;
             this.btnSaveQuote.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSaveQuote.Location = new System.Drawing.Point(196, 339);
             this.btnSaveQuote.Name = "btnSaveQuote";
@@ -118,6 +118,7 @@
             this.btnSaveQuote.TabIndex = 23;
             this.btnSaveQuote.Text = "Save Quote";
             this.btnSaveQuote.UseVisualStyleBackColor = true;
+            this.btnSaveQuote.Click += new System.EventHandler(this.btnSaveQuote_Click);
             // 
             // cmbMaterialType
             // 
@@ -271,6 +272,8 @@
             this.Controls.Add(this.label1);
             this.Name = "DisplayQuote";
             this.Text = "DisplayQuote";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.DisplayQuote_FormClosing);
+            this.Shown += new System.EventHandler(this.DisplayQuote_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.numDrawers)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numDepth)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numWidth)).EndInit();

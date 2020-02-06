@@ -16,7 +16,6 @@ namespace MegaDesk_Rogers
     {
           
 
-
         public AddQuote()
         {
             InitializeComponent();
@@ -54,14 +53,14 @@ namespace MegaDesk_Rogers
             Hide();
         }
 
-        public DeskQuote newQuote = new DeskQuote();
+        //public DeskQuote newQuote = new DeskQuote();
 
         private void btnAddQuote_Click(object sender, EventArgs e)
         {
             //try
             //{
                 //Get all the variables from the form and add to the DeskQuote object
-                //DeskQuote newQuote = new DeskQuote();
+                DeskQuote newQuote = new DeskQuote();
                 newQuote.CustomerName = txtCustName.Text;
                 newQuote.Width = numWidth.Value;
                 newQuote.Depth = numDepth.Value;
@@ -74,45 +73,23 @@ namespace MegaDesk_Rogers
                 //Open the display quote form? Or is this supposed to be saved as a result of viewing the quote?
                 
                 var displayQuoteForm = new DisplayQuote();
-                displayQuoteForm.addQuoteFrm = this;
+                displayQuoteForm.currQuote = newQuote;
                 displayQuoteForm.Show();
                 Hide();
-
-            /*}
+            Console.WriteLine("Pause");
+            /*
+            }
             catch (Exception ex)
             {
                 //catch to make sure that all the fields are filled in
                 Console.WriteLine("ERROR");
                 Console.WriteLine(ex.Message);
-            }
-            */
+            }*/
+            
 
         }
 
-        private void saveQuote(DeskQuote newQuote)
-        {
-            string path = "quotes.json";
-            //create variable for the list of DeskQuotes
-            var quotes = new List<DeskQuote>();
-            if (!File.Exists(@path))
-            {
-                //create file? If I don't need any code here, then this is just a single if to load the file into the list if it exists
-            }
-            else    //Loads the file
-            {
-                //read the file into a variable
-                string json = File.ReadAllText(@path);
-                //deserialize the json into a list of DeskQuotes
-                quotes = JsonConvert.DeserializeObject<List<DeskQuote>>(json);
-            }
-
-            //add the new quote to the list of DeskQuotes
-            quotes.Add(newQuote);
-            //serialize the list of DeskQuotes to a JObject
-            string jsonQuotes = JsonConvert.SerializeObject(quotes);
-            //save the JObject to the quotes.json file
-            File.WriteAllText(@path, jsonQuotes);
-        }
+        
 
 
         private void enableAddQuote()
