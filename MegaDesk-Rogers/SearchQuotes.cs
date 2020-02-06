@@ -89,6 +89,14 @@ namespace MegaDesk_Rogers
             }).Where(q => q.SurfaceMaterial == desktopMaterial).ToList();
         }
 
+        private void SearchQuotes_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            ((Form)Tag).Show();
+        }
 
+        private void clearSearch_Click(object sender, EventArgs e)
+        {
+            cmbSearchMaterial.SelectedIndex = -1;
+        }
     }
     }

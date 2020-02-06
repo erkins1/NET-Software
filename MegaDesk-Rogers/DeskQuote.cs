@@ -15,10 +15,10 @@ namespace MegaDesk_Rogers
         public ShippingDay ShippingDays { get; set; }
         public enum ShippingDay
         {
-            a3Days = 3,
-            a5Days = 5,
-            a7Days = 7,
-            a14Days = 14
+            Rush3Days = 3,
+            Rush5Days = 5,
+            Rush7Days = 7,
+            NoRush14Days = 14
         }
 
         const decimal BasePrice = 200.00M;

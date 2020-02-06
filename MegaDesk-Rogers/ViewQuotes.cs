@@ -46,8 +46,7 @@ namespace MegaDesk_Rogers
 
         private void ViewQuotes_FormClosing(object sender, FormClosingEventArgs e)
         {
-            
-            
+            ((Form)Tag).Show();
         }
     }
     }
