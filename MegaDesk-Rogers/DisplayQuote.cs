@@ -110,6 +110,7 @@ namespace MegaDesk_Rogers
         private void closeToMain()
         {
             Close();
+            ((Form)Tag).Close();
             MainMenuTag.Show();
         }
 

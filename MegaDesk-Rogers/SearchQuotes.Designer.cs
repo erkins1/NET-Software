@@ -40,15 +40,15 @@
             this.dtblSearchQuotes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtblSearchQuotes.Location = new System.Drawing.Point(0, 144);
             this.dtblSearchQuotes.Name = "dtblSearchQuotes";
-            this.dtblSearchQuotes.Size = new System.Drawing.Size(834, 306);
+            this.dtblSearchQuotes.Size = new System.Drawing.Size(884, 306);
             this.dtblSearchQuotes.TabIndex = 0;
             // 
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(-32, 57);
+            this.label1.Location = new System.Drawing.Point(250, 57);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(681, 23);
+            this.label1.Size = new System.Drawing.Size(126, 23);
             this.label1.TabIndex = 1;
             this.label1.Text = "Material Type:";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -57,7 +57,7 @@
             // 
             this.cmbSearchMaterial.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbSearchMaterial.FormattingEnabled = true;
-            this.cmbSearchMaterial.Location = new System.Drawing.Point(369, 55);
+            this.cmbSearchMaterial.Location = new System.Drawing.Point(382, 55);
             this.cmbSearchMaterial.Name = "cmbSearchMaterial";
             this.cmbSearchMaterial.Size = new System.Drawing.Size(121, 28);
             this.cmbSearchMaterial.TabIndex = 2;
@@ -65,7 +65,7 @@
             // 
             // clearSearch
             // 
-            this.clearSearch.Location = new System.Drawing.Point(513, 57);
+            this.clearSearch.Location = new System.Drawing.Point(509, 58);
             this.clearSearch.Name = "clearSearch";
             this.clearSearch.Size = new System.Drawing.Size(75, 23);
             this.clearSearch.TabIndex = 3;
@@ -77,7 +77,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(834, 450);
+            this.ClientSize = new System.Drawing.Size(884, 450);
             this.Controls.Add(this.clearSearch);
             this.Controls.Add(this.cmbSearchMaterial);
             this.Controls.Add(this.label1);

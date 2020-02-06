@@ -37,14 +37,14 @@
             this.dtblViewQuotes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtblViewQuotes.Location = new System.Drawing.Point(0, 0);
             this.dtblViewQuotes.Name = "dtblViewQuotes";
-            this.dtblViewQuotes.Size = new System.Drawing.Size(834, 450);
+            this.dtblViewQuotes.Size = new System.Drawing.Size(884, 450);
             this.dtblViewQuotes.TabIndex = 0;
             // 
             // ViewQuotes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(834, 450);
+            this.ClientSize = new System.Drawing.Size(884, 450);
             this.Controls.Add(this.dtblViewQuotes);
             this.Name = "ViewQuotes";
             this.Text = "ViewQuotes";
