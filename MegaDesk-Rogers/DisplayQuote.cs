@@ -15,6 +15,7 @@ namespace MegaDesk_Rogers
     public partial class DisplayQuote : Form
     {
         public DeskQuote currQuote = new DeskQuote();
+         
         
         public DisplayQuote()
         {
@@ -34,6 +35,10 @@ namespace MegaDesk_Rogers
             cmbShipping.SelectedIndex = -1;
         }
 
+        private void DisplayQuote_Shown(object sender, EventArgs e)
+        {
+            fillForm();
+        }
         private void fillForm()
         {
             txtCustName.Text = currQuote.CustomerName;
@@ -46,13 +51,13 @@ namespace MegaDesk_Rogers
             //Console.WriteLine(currQuote.CustomerName);
         }
 
-        private void DisplayQuote_Shown(object sender, EventArgs e)
-        {
-            fillForm();
-        }
+        
 
         private void saveQuote()
         {
+            //Add the date to the currQuote object
+            currQuote.Date = DateTime.Now;
+
             string path = "quotes.json";
             //create variable for the list of DeskQuotes
             var quotes = new List<DeskQuote>();
@@ -68,8 +73,6 @@ namespace MegaDesk_Rogers
                 quotes = JsonConvert.DeserializeObject<List<DeskQuote>>(json);
             }
 
-            //make sure that any changes in the display are updated in the class
-            updateQuote();
             //add the new quote to the list of DeskQuotes
             quotes.Add(currQuote);
             //serialize the list of DeskQuotes to a JObject
@@ -81,6 +84,7 @@ namespace MegaDesk_Rogers
         }
 
         //This will either be called from save quote or everytime a value changes
+        /*
         private void updateQuote()  
         {
             currQuote.CustomerName = txtCustName.Text;
@@ -89,7 +93,7 @@ namespace MegaDesk_Rogers
             currQuote.NumDrawers = numDrawers.Value;
             currQuote.MaterialType = (DeskQuote.DesktopMaterial)cmbMaterialType.SelectedItem;
             currQuote.ShippingDays = (DeskQuote.ShippingDay)cmbShipping.SelectedItem;
-        }
+        }*/
 
         private void btnSaveQuote_Click(object sender, EventArgs e)
         {

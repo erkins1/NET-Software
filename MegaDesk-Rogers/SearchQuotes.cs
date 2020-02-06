@@ -39,7 +39,7 @@ namespace MegaDesk_Rogers
             else
             {
                 // Use value to search
-                loadGrid((Desk.DesktopMaterial)search.SelectedValue);
+                //loadGrid((Desk.DesktopMaterial)search.SelectedValue);
             }
         } 
 

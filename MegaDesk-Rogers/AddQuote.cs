@@ -76,7 +76,7 @@ namespace MegaDesk_Rogers
                 displayQuoteForm.currQuote = newQuote;
                 displayQuoteForm.Show();
                 Hide();
-            Console.WriteLine("Pause");
+            
             /*
             }
             catch (Exception ex)
