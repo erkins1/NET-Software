@@ -14,7 +14,7 @@ namespace MegaDesk_Rogers
 {
     public partial class AddQuote : Form
     {
-                     
+          
 
 
         public AddQuote()
@@ -54,32 +54,38 @@ namespace MegaDesk_Rogers
             Hide();
         }
 
+        public DeskQuote newQuote = new DeskQuote();
+
         private void btnAddQuote_Click(object sender, EventArgs e)
         {
-            try
-            {
+            //try
+            //{
                 //Get all the variables from the form and add to the DeskQuote object
-                DeskQuote newQuote = new DeskQuote();
+                //DeskQuote newQuote = new DeskQuote();
                 newQuote.CustomerName = txtCustName.Text;
                 newQuote.Width = numWidth.Value;
                 newQuote.Depth = numDepth.Value;
                 newQuote.NumDrawers = numDrawers.Value;
-                newQuote.MaterialType = (Desk.DesktopMaterial)cmbMaterialType.SelectedItem;
+                newQuote.MaterialType = (DeskQuote.DesktopMaterial)cmbMaterialType.SelectedItem;
                 newQuote.ShippingDays = (DeskQuote.ShippingDay)cmbShipping.SelectedItem;
 
                 //call the saveQuotes method and pass the new deskQuote object
-                saveQuote(newQuote);
+                //saveQuote(newQuote);
                 //Open the display quote form? Or is this supposed to be saved as a result of viewing the quote?
+                
+                var displayQuoteForm = new DisplayQuote();
+                displayQuoteForm.addQuoteFrm = this;
+                displayQuoteForm.Show();
+                Hide();
 
-
-            }
+            /*}
             catch (Exception ex)
             {
                 //catch to make sure that all the fields are filled in
                 Console.WriteLine("ERROR");
                 Console.WriteLine(ex.Message);
             }
-
+            */
 
         }
 

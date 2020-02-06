@@ -12,9 +12,22 @@ namespace MegaDesk_Rogers
 {
     public partial class DisplayQuote : Form
     {
+        public DisplayQuote newQuote;
+        public AddQuote addQuoteFrm;
         public DisplayQuote()
         {
             InitializeComponent();
+            fillForm();
         }
+
+        private void fillForm()
+        {
+
+            lblQuote.Text = ((AddQuote)addQuoteFrm).newQuote.GetQuotePrice().ToString("c");
+        }
+        
+        
+
+
     }
 }
