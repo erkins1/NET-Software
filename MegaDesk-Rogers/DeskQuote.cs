@@ -11,6 +11,7 @@ namespace MegaDesk_Rogers
     {
         public Desk Desk { get; set; }
         public string CustomerName { get; set; }
+        public DateTime Date { get; set; }
         public ShippingDay ShippingDays { get; set; }
         public enum ShippingDay
         {

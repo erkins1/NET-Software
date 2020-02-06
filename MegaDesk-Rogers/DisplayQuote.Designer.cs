@@ -74,6 +74,7 @@
             // 
             // txtCustName
             // 
+            this.txtCustName.Enabled = false;
             this.txtCustName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCustName.Location = new System.Drawing.Point(196, 77);
             this.txtCustName.Name = "txtCustName";
@@ -92,6 +93,7 @@
             // 
             // cmbShipping
             // 
+            this.cmbShipping.Enabled = false;
             this.cmbShipping.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbShipping.FormattingEnabled = true;
             this.cmbShipping.Location = new System.Drawing.Point(503, 225);
@@ -122,6 +124,7 @@
             // 
             // cmbMaterialType
             // 
+            this.cmbMaterialType.Enabled = false;
             this.cmbMaterialType.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbMaterialType.FormattingEnabled = true;
             this.cmbMaterialType.Location = new System.Drawing.Point(503, 175);
@@ -131,6 +134,7 @@
             // 
             // numDrawers
             // 
+            this.numDrawers.Enabled = false;
             this.numDrawers.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numDrawers.Location = new System.Drawing.Point(503, 126);
             this.numDrawers.Maximum = new decimal(new int[] {
@@ -141,9 +145,11 @@
             this.numDrawers.Name = "numDrawers";
             this.numDrawers.Size = new System.Drawing.Size(120, 26);
             this.numDrawers.TabIndex = 21;
+            this.numDrawers.TabStop = false;
             // 
             // numDepth
             // 
+            this.numDepth.Enabled = false;
             this.numDepth.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numDepth.Location = new System.Drawing.Point(196, 176);
             this.numDepth.Maximum = new decimal(new int[] {
@@ -167,6 +173,7 @@
             // 
             // numWidth
             // 
+            this.numWidth.Enabled = false;
             this.numWidth.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numWidth.Location = new System.Drawing.Point(196, 126);
             this.numWidth.Maximum = new decimal(new int[] {
