@@ -28,19 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dtblSearchQuotes = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.cmbSearchMaterial = new System.Windows.Forms.ComboBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtblSearchQuotes)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dtblSearchQuotes
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 144);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(800, 306);
-            this.dataGridView1.TabIndex = 0;
+            this.dtblSearchQuotes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtblSearchQuotes.Location = new System.Drawing.Point(0, 144);
+            this.dtblSearchQuotes.Name = "dtblSearchQuotes";
+            this.dtblSearchQuotes.Size = new System.Drawing.Size(800, 306);
+            this.dtblSearchQuotes.TabIndex = 0;
             // 
             // label1
             // 
@@ -69,17 +69,17 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.cmbSearchMaterial);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dtblSearchQuotes);
             this.Name = "SearchQuotes";
             this.Text = "SearchQuotes";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtblSearchQuotes)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dtblSearchQuotes;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cmbSearchMaterial;
     }

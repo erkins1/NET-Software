@@ -33,16 +33,21 @@ namespace MegaDesk_Rogers
 
             dtblViewQuotes.DataSource = deskQuotes.Select(d => new
                 {
-                    Date = d.QuoteDate,
+                    Date = d.Date,
                     Customer = d.CustomerName,
-                    Depth = d.Desk.Depth,
-                    Width = d.Desk.Width,
-                    Drawers = d.Desk.NumDrawers,
-                    SurfaceMaterial = d.Desk.MaterialType,
+                    Depth = d.Depth,
+                    Width = d.Width,
+                    Drawers = d.NumDrawers,
+                    SurfaceMaterial = d.MaterialType,
                     DeliveryType = d.ShippingDays,
                     QuoteAmount = d.GetQuotePrice().ToString("c")
                 }).ToList();
             }
+
+        private void ViewQuotes_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            
+            
         }
     }
-}
+    }

@@ -48,6 +48,7 @@
             this.Controls.Add(this.dtblViewQuotes);
             this.Name = "ViewQuotes";
             this.Text = "ViewQuotes";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ViewQuotes_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.dtblViewQuotes)).EndInit();
             this.ResumeLayout(false);
 
