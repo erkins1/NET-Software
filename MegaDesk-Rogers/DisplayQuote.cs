@@ -54,49 +54,40 @@ namespace MegaDesk_Rogers
             //Console.WriteLine(currQuote.CustomerName);
         }
 
-        
-
         private void saveQuote()
         {
-            //Add the date to the currQuote object
-            currQuote.Date = DateTime.Now;
-
-            string path = "quotes.json";
-            //create variable for the list of DeskQuotes
-            var quotes = new List<DeskQuote>();
-            if (!File.Exists(@path))
+            try
             {
-                //create file? If I don't need any code here, then this is just a single if to load the file into the list if it exists
-            }
-            else    //Loads the file
+                //Add the date to the currQuote object
+                currQuote.Date = DateTime.Now;
+
+                string path = "quotes.json";
+                //create variable for the list of DeskQuotes
+                var quotes = new List<DeskQuote>();
+                if (File.Exists(@path))         //Loads the file
+                {
+                    //read the file into a variable
+                    string json = File.ReadAllText(@path);
+                    //deserialize the json into a list of DeskQuotes
+                    quotes = JsonConvert.DeserializeObject<List<DeskQuote>>(json);
+                }
+
+                //add the new quote to the list of DeskQuotes
+                quotes.Add(currQuote);
+                //serialize the list of DeskQuotes to a JObject
+                string jsonQuotes = JsonConvert.SerializeObject(quotes);
+                //save the JObject to the quotes.json file
+                File.WriteAllText(@path, jsonQuotes);
+
+                closeToMain();
+            } catch (Exception ex)
             {
-                //read the file into a variable
-                string json = File.ReadAllText(@path);
-                //deserialize the json into a list of DeskQuotes
-                quotes = JsonConvert.DeserializeObject<List<DeskQuote>>(json);
+                Console.WriteLine(ex.Message);
+                MessageBox.Show("There was an error loading or saving this quote", "Error", MessageBoxButtons.OK);
             }
-
-            //add the new quote to the list of DeskQuotes
-            quotes.Add(currQuote);
-            //serialize the list of DeskQuotes to a JObject
-            string jsonQuotes = JsonConvert.SerializeObject(quotes);
-            //save the JObject to the quotes.json file
-            File.WriteAllText(@path, jsonQuotes);
-
-            closeToMain();
         }
 
-        /*This will either be called from save quote or everytime a value changes
-        private void updateQuote()  
-        {
-            currQuote.CustomerName = txtCustName.Text;
-            currQuote.Width = numWidth.Value;
-            currQuote.Depth = numDepth.Value;
-            currQuote.NumDrawers = numDrawers.Value;
-            currQuote.MaterialType = (DeskQuote.DesktopMaterial)cmbMaterialType.SelectedItem;
-            currQuote.ShippingDays = (DeskQuote.ShippingDay)cmbShipping.SelectedItem;
-        }*/
-
+        //Click and close events
         private void btnSaveQuote_Click(object sender, EventArgs e)
         {
             saveQuote();

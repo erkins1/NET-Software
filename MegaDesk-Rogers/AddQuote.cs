@@ -39,8 +39,8 @@ namespace MegaDesk_Rogers
 
         private void btnAddQuote_Click(object sender, EventArgs e)
         {
-            //try
-            //{
+            try
+            {
                 //Get all the variables from the form and add to the DeskQuote object
                 DeskQuote newQuote = new DeskQuote();
                 newQuote.CustomerName = txtCustName.Text;
@@ -58,14 +58,14 @@ namespace MegaDesk_Rogers
                 displayQuoteForm.Show();
                 Hide();
             
-            /*
+            
             }
             catch (Exception ex)
             {
                 //catch to make sure that all the fields are filled in
-                Console.WriteLine("ERROR");
                 Console.WriteLine(ex.Message);
-            }*/
+                MessageBox.Show("There was an error displaying the quote. Make sure all fields are correct.", "Error", MessageBoxButtons.OK);
+            }
             
 
         }

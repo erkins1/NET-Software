@@ -69,25 +69,30 @@ namespace MegaDesk_Rogers
 
         private void loadGrid(Desk.DesktopMaterial desktopMaterial)
         {
+            try { 
+                var quotesFile = "quotes.json";
 
-            var quotesFile = "quotes.json";
+                string json = File.ReadAllText(@quotesFile);
 
-            string json = File.ReadAllText(@quotesFile);
+                List<DeskQuote> deskQuotes = JsonConvert.DeserializeObject<List<DeskQuote>>(json);
 
-            List<DeskQuote> deskQuotes = JsonConvert.DeserializeObject<List<DeskQuote>>(json);
-
-            dtblSearchQuotes.DataSource = deskQuotes.Select(d => new
+                dtblSearchQuotes.DataSource = deskQuotes.Select(d => new
+                {
+                    Date = d.Date,
+                    Customer = d.CustomerName,
+                    Depth = d.Depth,
+                    Width = d.Width,
+                    Drawers = d.NumDrawers,
+                    SurfaceMaterial = d.MaterialType,
+                    DeliveryType = d.ShippingDays,
+                    QuoteAmount = d.GetQuotePrice().ToString("c")
+                }).Where(q => q.SurfaceMaterial == desktopMaterial).ToList();
+            }
+            catch (Exception ex)
             {
-                Date = d.Date,
-                Customer = d.CustomerName,
-                Depth = d.Depth,
-                Width = d.Width,
-                Drawers = d.NumDrawers,
-                SurfaceMaterial = d.MaterialType,
-                DeliveryType = d.ShippingDays,
-                QuoteAmount = d.GetQuotePrice().ToString("c")
-            }).Where(q => q.SurfaceMaterial == desktopMaterial).ToList();
-        }
+                Console.WriteLine(ex.Message);
+            }
+}
 
         private void SearchQuotes_FormClosed(object sender, FormClosedEventArgs e)
         {
