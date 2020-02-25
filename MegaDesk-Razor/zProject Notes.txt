@@ -1,0 +1,54 @@
+﻿
+Class notes:
+	When making the migration folder, make sure to add it to the .gitignore file
+		Each computer needs to run its own "Add-Migration InitialCreate" to create the database on it
+
+	Brother Thayne wants us to actually design the homepage as well
+		It shouldn't look like the application, but should have similar buttons
+
+	Be aware that when we save a quote, we are saving to 2 different classes
+
+	Do not let the user enter or change the date field
+
+	There was something about using the [BindProperty] in the create page 
+		This is to help connect input fields to the classes?
+		IDK exactly what it was, but pictures will be in the Discord
+
+
+Classes:
+	We can use the same classes as before, but some changes are nessecary
+
+	No enums in these classes
+		We will create new classes/tables for the materials and shipping attributes
+			In those tables we can add prices
+
+	Classes will not have inheritence, but will use foreign keys to refrence other tables/class ID's
+
+
+Project Notes:
+	Make sure the Desk, DeskQuote, Materials, and ShippingSpeed classes are set up
+
+	Create Scaffolding
+
+	Get SeedData ready to fill in Materials and ShippingSpeed tables
+
+	Do the Initial Migrations for each computer
+
+	Make the forms ready to create/edit quotes
+
+	Make sure the forms are saving the quotes correctly
+
+	Make sure that the forms show helpful information instead of foreign keys 
+
+	Design the webpage
+
+
+
+
+
+
+
+
+
+
+
