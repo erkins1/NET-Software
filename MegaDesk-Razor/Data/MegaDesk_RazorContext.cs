@@ -15,5 +15,8 @@ namespace MegaDesk_Razor.Data
         }
 
         public DbSet<MegaDesk_Razor.Models.DeskQuote> DeskQuote { get; set; }
+        public DbSet<MegaDesk_Razor.Models.Desk> Desk { get; set; }
+        public DbSet<MegaDesk_Razor.Models.Materials> Materials { get; set; }
+        public DbSet<MegaDesk_Razor.Models.ShippingSpeed> ShippingSpeed { get; set; }
     }
 }
