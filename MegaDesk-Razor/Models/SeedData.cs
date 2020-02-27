@@ -50,11 +50,6 @@ namespace MegaDesk_Razor.Models
                     },
                     new Materials
                     {
-                        MaterialType = "Oak",
-                        Price = 200.00M
-                    },
-                    new Materials
-                    {
                         MaterialType = "Veneer",
                         Price = 125.00M
                     });

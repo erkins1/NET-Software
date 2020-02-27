@@ -24,6 +24,7 @@ namespace MegaDesk_Razor.Models
         public int Desk { get; set; }               //This is a Foreign Key
 
         [Display(Name = "Shipping Speed")]
+        [ForeignKey("ShippingSpeed")]
         public int ShippingSpeed { get; set; }      //This is a Foreign Key
 
         const decimal BasePrice = 200.00M;
