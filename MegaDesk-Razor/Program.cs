@@ -15,7 +15,6 @@ namespace MegaDesk_Razor
     {
         public static void Main(string[] args)
         {
-            Console.WriteLine("Main was run");
             var host = CreateHostBuilder(args).Build();
 
             using (var scope = host.Services.CreateScope())
@@ -24,7 +23,6 @@ namespace MegaDesk_Razor
                 
                 try
                 {
-                    Console.WriteLine("Initialize Function ran");
                     SeedData.Initialize(services);
                 }
                 catch (Exception ex)

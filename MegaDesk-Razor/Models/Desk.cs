@@ -26,5 +26,7 @@ namespace MegaDesk_Razor.Models
 
         [Display(Name = "Material Type")]
         public int MaterialType { get; set; }       //This is a Foreign Key
+        /* Navigation Property */
+        public Materials DesktopType { get; set; } //What does this do?
     }
 }
