@@ -25,8 +25,9 @@ namespace MegaDesk_Razor.Models
         public decimal NumDrawers { get; set; }
 
         [Display(Name = "Material Type")]
+        [ForeignKey("MaterialType")]
         public int MaterialType { get; set; }       //This is a Foreign Key
         /* Navigation Property */
-        public Materials DesktopType { get; set; } //What does this do?
+        //public Materials DesktopType { get; set; } //What does this do?
     }
 }

@@ -22,14 +22,12 @@ namespace MegaDesk_Razor
         public IActionResult OnGet()
         {
             //Creates the list of material types for the dropdown
-            IQueryable<string> typeList = from m in _context.Materials
-                                            select m.MaterialType;
-            TypeList = new SelectList(typeList);
+            IQueryable<Materials> typeList = from m in _context.Materials select m;
+            TypeList = new SelectList(typeList, "ID", "MaterialType");
 
             //Creates the list of shipping speeds for the dropdown
-            IQueryable<string> shippingList = from m in _context.ShippingSpeed
-                                          select m.Speed;
-            ShipDays = new SelectList(shippingList);
+            IQueryable<ShippingSpeed> shippingList = from s in _context.ShippingSpeed select s;
+            ShipDays = new SelectList(shippingList, "ID", "Speed");
 
             return Page();
         }
