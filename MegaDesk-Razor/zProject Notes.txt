@@ -43,9 +43,12 @@ Project Notes:
 	Design the webpage
 
 
+**IMPORTANT**
+	Need to add the rushOrderPrices.txt in the bin to the respository
+		I can't remember how to yet...
 
-
-
+Potential Issues:
+	Number of Drawers on the Create page is not a numeric up down
 
 
 

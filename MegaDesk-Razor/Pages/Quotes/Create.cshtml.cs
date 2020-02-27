@@ -21,6 +21,16 @@ namespace MegaDesk_Razor
 
         public IActionResult OnGet()
         {
+            //Creates the list of material types for the dropdown
+            IQueryable<string> typeList = from m in _context.Materials
+                                            select m.MaterialType;
+            TypeList = new SelectList(typeList);
+
+            //Creates the list of shipping speeds for the dropdown
+            IQueryable<string> shippingList = from m in _context.ShippingSpeed
+                                          select m.Speed;
+            ShipDays = new SelectList(shippingList);
+
             return Page();
         }
 
@@ -29,6 +39,10 @@ namespace MegaDesk_Razor
 
         [BindProperty]
         public Desk Desk { get; set; }
+
+        public SelectList TypeList;
+        public SelectList ShipDays;
+
 
 
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for
@@ -39,6 +53,12 @@ namespace MegaDesk_Razor
             {
                 return Page();
             }
+
+            _context.Desk.Add(Desk);
+            await _context.SaveChangesAsync();
+
+            DeskQuote.Desk = Desk.ID;
+            DeskQuote.Date = DateTime.Now;
 
             _context.DeskQuote.Add(DeskQuote);
             await _context.SaveChangesAsync();

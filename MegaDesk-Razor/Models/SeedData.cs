@@ -15,6 +15,7 @@ namespace MegaDesk_Razor.Models
     {
         public static void Initialize(IServiceProvider serviceProvider)
         {
+            Console.WriteLine("Does this even run?");
             using (var context = new MegaDesk_RazorContext(
                 serviceProvider.GetRequiredService<
                     DbContextOptions<MegaDesk_RazorContext>>()))
@@ -22,6 +23,7 @@ namespace MegaDesk_Razor.Models
                 // Look for any movies.
                 if (context.Materials.Any())
                 {
+                    Console.WriteLine("Database thinks its got something in it.");
                     return;   // DB has been seeded
                 }
 

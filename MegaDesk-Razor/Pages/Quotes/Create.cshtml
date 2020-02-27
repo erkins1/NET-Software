@@ -35,14 +35,15 @@
             </div>
             <div class="form-group">
                 <label asp-for="Desk.MaterialType" class="control-label"></label>
-                <input asp-for="Desk.MaterialType" class="form-control" />
-                <span asp-validation-for="Desk.MaterialType" class="text-danger"></span>
+                <select asp-for="Desk.MaterialType" asp-items="Model.TypeList" class="form-control">
+                </select>
             </div>
             <div class="form-group">
                 <label asp-for="DeskQuote.ShippingSpeed" class="control-label"></label>
-                <input asp-for="DeskQuote.ShippingSpeed" class="form-control" />
-                <span asp-validation-for="DeskQuote.ShippingSpeed" class="text-danger"></span>
+                <select asp-for="DeskQuote.ShippingSpeed" asp-items="Model.ShipDays" class="form-control">
+                </select>
             </div>
+           
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
             </div>
