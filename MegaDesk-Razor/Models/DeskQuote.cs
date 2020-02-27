@@ -34,8 +34,12 @@ namespace MegaDesk_Razor.Models
         public decimal GetQuotePrice(MegaDesk_Razor.Data.MegaDesk_RazorContext context)
         {
             var _context = context;
+            IQueryable<Materials> typeList = from m in _context.Materials select m;
+            IQueryable<Desk> deskList = from d in _context.Desk select d;
 
-
+            decimal deskSize = _context.Desk.;
+            //IEnumerable<Product> products = myORM.GetProducts();
+           // var productsOver25 = products.Where(p => p.Cost >= 25.00);
 
 
             return 0;
