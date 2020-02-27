@@ -11,11 +11,11 @@ namespace MegaDesk_Razor.Models
     {
         public int ID { get; set; }
 
-        [Range(1, 100)]
+        [Range(24, 96)]
         [Required]
         public decimal Width { get; set; }
 
-        [Range(1, 100)]
+        [Range(12, 48)]
         [Required]
         public decimal Depth { get; set; }
 
@@ -25,8 +25,8 @@ namespace MegaDesk_Razor.Models
         public decimal NumDrawers { get; set; }
 
         [Display(Name = "Material Type")]
-        [ForeignKey("Materials")]
-        public int MaterialType { get; set; }       //This is a Foreign Key
+        [ForeignKey("ID")]
+        public int MaterialsID { get; set; }       //This is a Foreign Key
         /* Navigation Property */
         //public Materials DesktopType { get; set; } //What does this do?
     }
