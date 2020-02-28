@@ -51,10 +51,15 @@ Potential Issues:
 	Number of Drawers on the Create page is not a numeric up down
 
 Next Steps:	
-	Calculate Quote Price
 	Adjust UI look and feel
 	Change the Index, Delete, Details and Edit Pages
 	Include Sort and Search features
+
+UI:
+	main index
+	links on main index
+	formatting and simple design
+
 
 
 
