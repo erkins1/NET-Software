@@ -69,3 +69,14 @@ body {
   white-space: nowrap;
   line-height: 60px; /* Vertically center the text there */
 }
+
+/* CUSTOM CSS HERE */
+#nav-buttons {
+    width: 100%;
+    font-size: 4em;
+    display: flex;
+    justify-content: space-around;
+}
+#viewQuotesLink, #createQuotesLink {
+    padding: 10px;
+}
