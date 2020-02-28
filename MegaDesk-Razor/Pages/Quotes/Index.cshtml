@@ -20,10 +20,7 @@
                 @Html.DisplayNameFor(model => model.DeskQuote[0].Date)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.DeskQuote[0].Desk)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.DeskQuote[0].ShippingSpeed)
+                @Html.DisplayNameFor(model => model.DeskQuote[0].QuotePrice)
             </th>
             <th></th>
         </tr>
@@ -38,10 +35,7 @@
                 @Html.DisplayFor(modelItem => item.Date)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Desk)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ShippingSpeed)
+                @Html.DisplayFor(modelItem => item.QuotePrice)
             </td>
             <td>
                 <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |

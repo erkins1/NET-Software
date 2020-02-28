@@ -48,7 +48,8 @@ Project Notes:
 		I can't remember how to yet...
 
 Potential Issues:
-	Number of Drawers on the Create page is not a numeric up down
+	Deleting a quote currently only deletes the line from the DeskQuote table, not from anything else
+	There are no Foreign Keys in the databases
 
 Next Steps:	
 	Adjust UI look and feel
