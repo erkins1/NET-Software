@@ -57,11 +57,10 @@ namespace MegaDesk_Razor
 
             DeskQuote.Desk = Desk.ID;
             DeskQuote.Date = DateTime.Now;
+            DeskQuote.QuotePrice = DeskQuote.GetQuotePrice(_context);
 
             _context.DeskQuote.Add(DeskQuote);
             await _context.SaveChangesAsync();
-
-            Console.WriteLine(DeskQuote.GetQuotePrice(_context));
 
             return RedirectToPage("./Index");
         }

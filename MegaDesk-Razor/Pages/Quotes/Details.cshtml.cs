@@ -20,6 +20,9 @@ namespace MegaDesk_Razor
         }
 
         public DeskQuote DeskQuote { get; set; }
+        public Desk Desk { get; set; }
+        public Materials Materials { get; set; }
+        public ShippingSpeed ShippingSpeed { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
@@ -29,6 +32,9 @@ namespace MegaDesk_Razor
             }
 
             DeskQuote = await _context.DeskQuote.FirstOrDefaultAsync(m => m.ID == id);
+            Desk = await _context.Desk.FirstOrDefaultAsync(m => m.ID == DeskQuote.Desk);
+            Materials = await _context.Materials.FirstOrDefaultAsync(m => m.ID == Desk.Materials);
+            ShippingSpeed = await _context.ShippingSpeed.FirstOrDefaultAsync(m => m.ID == DeskQuote.ShippingSpeed);
 
             if (DeskQuote == null)
             {

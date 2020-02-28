@@ -61,6 +61,9 @@ namespace MegaDesk_Razor.Migrations
                     b.Property<int>("Desk")
                         .HasColumnType("int");
 
+                    b.Property<decimal>("QuotePrice")
+                        .HasColumnType("decimal(18,2)");
+
                     b.Property<int>("ShippingSpeed")
                         .HasColumnType("int");
 
