@@ -31,6 +31,10 @@ namespace MegaDesk_Razor.Models
         const decimal RateLargeDesk = 1.00M;
         const decimal RatePerDrawer = 50.00M;
 
+        [Display(Name = "Quote Price")]
+        [DataType(DataType.Currency)]
+        public decimal QuotePrice { get; set; }
+
         public decimal GetQuotePrice(MegaDesk_Razor.Data.MegaDesk_RazorContext context)
         {
             var _context = context;

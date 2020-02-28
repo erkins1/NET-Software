@@ -22,6 +22,11 @@ namespace MegaDesk_Razor
 
         [BindProperty]
         public DeskQuote DeskQuote { get; set; }
+        [BindProperty]
+        public Desk Desk { get; set; }
+
+        public SelectList TypeList;
+        public SelectList ShipDays;
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
@@ -30,7 +35,18 @@ namespace MegaDesk_Razor
                 return NotFound();
             }
 
+            //Creates the list of material types for the dropdown
+            IQueryable<Materials> typeList = from m in _context.Materials select m;
+            TypeList = new SelectList(typeList, "ID", "MaterialType");
+
+            //Creates the list of shipping speeds for the dropdown
+            IQueryable<ShippingSpeed> shippingList = from s in _context.ShippingSpeed select s;
+            ShipDays = new SelectList(shippingList, "ID", "Speed");
+
+            //Grab the stuff...
             DeskQuote = await _context.DeskQuote.FirstOrDefaultAsync(m => m.ID == id);
+            Desk = await _context.Desk.FirstOrDefaultAsync(m => m.ID == DeskQuote.Desk);
+
 
             if (DeskQuote == null)
             {

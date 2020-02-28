@@ -21,6 +21,7 @@ namespace MegaDesk_Razor.Models
 
         [Range(0, 7)]
         [Display(Name = "Number of Drawers")]
+        [DisplayFormat(DataFormatString = "{0:#}")]
         [Required]
         public decimal NumDrawers { get; set; }
         
