@@ -29,7 +29,7 @@ namespace MegaDesk_Razor.Migrations
                     b.Property<decimal>("Depth")
                         .HasColumnType("decimal(18,2)");
 
-                    b.Property<int>("MaterialType")
+                    b.Property<int>("Materials")
                         .HasColumnType("int");
 
                     b.Property<decimal>("NumDrawers")

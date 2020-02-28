@@ -23,10 +23,11 @@ namespace MegaDesk_Razor.Models
         [Display(Name = "Number of Drawers")]
         [Required]
         public decimal NumDrawers { get; set; }
-
-        [Display(Name = "Material Type")]
-        [ForeignKey("ID")]
-        public int MaterialsID { get; set; }       //This is a Foreign Key
+        
+        public int Materials { get; set; }       //This is a Foreign Key
+        //[Display(Name = "Material Type")]
+        //[ForeignKey("MaterialsID")]
+       // public Materials Materials { get; set; }
         /* Navigation Property */
         //public Materials DesktopType { get; set; } //What does this do?
     }

@@ -61,6 +61,8 @@ namespace MegaDesk_Razor
             _context.DeskQuote.Add(DeskQuote);
             await _context.SaveChangesAsync();
 
+            Console.WriteLine(DeskQuote.GetQuotePrice(_context));
+
             return RedirectToPage("./Index");
         }
     }
