@@ -43,14 +43,30 @@ namespace MegaDesk_Razor.Models
 
             var deskSize = newDesk[0].Width * newDesk[0].Depth;
 
+            var deskPrice = BasePrice;
+
+            deskPrice += (deskSize - 1000) * RateLargeDesk;
+
+            deskPrice += newDesk[0].NumDrawers * RatePerDrawer;
+
+            // Get price based on material
+            deskPrice += materialsList[0].Price;
+
+            if (deskSize < 1000)
+            {
+                deskPrice += speedList[0].BasePrice;
+            }else if (deskSize >= 1000 && deskSize < 2000)
+            {
+                deskPrice += speedList[0].Over1000Price;
+            }
+            else
+            {
+                deskPrice += speedList[0].Over2000Price;
+            }
 
 
-            //var deskWidth = deskID.Width;
-            //IEnumerable<Product> products = myORM.GetProducts();
-            // var productsOver25 = products.Where(p => p.Cost >= 25.00);
 
-
-            return 0;
+            return deskPrice;
         }
 
     }
