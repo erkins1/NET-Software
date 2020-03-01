@@ -47,7 +47,7 @@ namespace MegaDesk_Razor
             DeskQuote = await _context.DeskQuote.FirstOrDefaultAsync(m => m.ID == id);
             Desk = await _context.Desk.FirstOrDefaultAsync(m => m.ID == DeskQuote.Desk);
 
-            //Assign a temporary 
+            //Assign a temporary value????
 
             if (DeskQuote == null)
             {
