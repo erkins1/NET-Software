@@ -22,7 +22,7 @@
     <thead>
         <tr>
             <th>
-                <a asp-page="./Index" asp-for="@Model.NameSort">
+                <a asp-page="./Index" asp-route-sortOrder="@Model.NameSort">
                     @Html.DisplayNameFor(model => model.DeskQuote[0].CustomerName)
                 </a>
             </th>

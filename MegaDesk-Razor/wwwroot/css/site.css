@@ -1,6 +1,8 @@
 ﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
 for details on configuring this project to bundle and minify static web assets. */
 
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap');
+
 a.navbar-brand {
   white-space: normal;
   text-align: center;
@@ -54,13 +56,17 @@ button.accept-policy {
 /* Sticky footer styles
 -------------------------------------------------- */
 html {
-  position: relative;
-  min-height: 100%;
+    position: relative;
+    min-height: 100%;
+    font-family: 'Roboto Mono';
+    background-color: #FFF8C7;
 }
 
 body {
-  /* Margin bottom by footer height */
-  margin-bottom: 60px;
+    /* Margin bottom by footer height */
+    margin-bottom: 60px;
+    font-family: 'Roboto Mono';
+    background-color: #FFF8C7;
 }
 .footer {
   position: absolute;
@@ -80,3 +86,6 @@ body {
 #viewQuotesLink, #createQuotesLink {
     padding: 10px;
 }
+
+/*font-family: 'Roboto Mono';
+background-color: #FFF8C7;*/
