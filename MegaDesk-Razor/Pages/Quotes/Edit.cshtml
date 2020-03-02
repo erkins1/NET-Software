@@ -14,6 +14,7 @@
         <form method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="DeskQuote.ID" />
+            <input type="hidden" asp-for="Desk.ID" />
             <div class="form-group">
                 <label asp-for="DeskQuote.CustomerName" class="control-label"></label>
                 <input asp-for="DeskQuote.CustomerName" class="form-control" />
@@ -24,12 +25,12 @@
                 <input asp-for="DeskQuote.Date" class="form-control" />
                 <span asp-validation-for="DeskQuote.Date" class="text-danger"></span>
             </div>
-                   <!-- This part should not be here!!! --> 
-            <div class="form-group">
+            <!-- This part should not be here!!! -->
+            @*<div class="form-group">
                 <label asp-for="DeskQuote.Desk" class="control-label"></label>
                 <input asp-for="DeskQuote.Desk" class="form-control" />
                 <span asp-validation-for="DeskQuote.Desk" class="text-danger"></span>
-            </div>
+            </div>*@
             <!--
             <div class="form-group">
                 <label asp-for="DeskQuote.ShippingSpeed" class="control-label"></label>

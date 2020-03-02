@@ -68,8 +68,10 @@ namespace MegaDesk_Razor
 
             //I don't know why this causes an issue...
             //Desk was changed and if I cannot set its state to modified it will not change in the database
-            //_context.Attach(Desk).State = EntityState.Modified;
-            
+            _context.Attach(Desk).State = EntityState.Modified;
+
+            DeskQuote.Desk = Desk.ID;
+
             //I think all this does is set the state to 16, indicating it has been modified...
             _context.Attach(DeskQuote).State = EntityState.Modified;
 
