@@ -47,8 +47,6 @@ namespace MegaDesk_Razor
             DeskQuote = await _context.DeskQuote.FirstOrDefaultAsync(m => m.ID == id);
             Desk = await _context.Desk.FirstOrDefaultAsync(m => m.ID == DeskQuote.Desk);
 
-            //Assign a temporary value????
-
             if (DeskQuote == null)
             {
                 return NotFound();
@@ -65,18 +63,12 @@ namespace MegaDesk_Razor
                 return Page();
             }
 
-
-            //I don't know why this causes an issue...
-            //Desk was changed and if I cannot set its state to modified it will not change in the database
             _context.Attach(Desk).State = EntityState.Modified;
 
             DeskQuote.Desk = Desk.ID;
 
-            //I think all this does is set the state to 16, indicating it has been modified...
             _context.Attach(DeskQuote).State = EntityState.Modified;
 
-            //Unless the integer for the desk is included in the HTML it will set it to 0
-            //Anything that is not visable on the page is set to 0...
             DeskQuote.QuotePrice = DeskQuote.GetQuotePrice(_context);
 
             try

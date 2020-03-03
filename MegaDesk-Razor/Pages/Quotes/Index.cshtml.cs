@@ -24,9 +24,6 @@ namespace MegaDesk_Razor
         [BindProperty(SupportsGet = true)]
         public string SearchString { get; set; }
 
-        //[BindProperty(SupportsGet = true)]
-        //public string sortOrder { get; set; }
-
         public string NameSort { get; set; }
         public string DateSort { get; set; }
         public string CurrentFilter { get; set; }
