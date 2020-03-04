@@ -70,12 +70,6 @@ namespace MyScriptureJournal.Models
                 context.SaveChanges();
 
 
-
-
-
-
-
-
             }
 
         }

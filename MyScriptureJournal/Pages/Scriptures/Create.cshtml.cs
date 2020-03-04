@@ -21,11 +21,16 @@ namespace MyScriptureJournal
 
         public IActionResult OnGet()
         {
+            IQueryable<Books> typeList = from b in _context.Books select b;
+            BooksOfScripture = new SelectList(typeList, "ID", "Name");
+
             return Page();
         }
 
         [BindProperty]
         public Scriptures Scriptures { get; set; }
+
+        public SelectList BooksOfScripture { get; set; }
 
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for
         // more details see https://aka.ms/RazorPagesCRUD.
@@ -37,6 +42,7 @@ namespace MyScriptureJournal
             }
 
             _context.Scriptures.Add(Scriptures);
+            Scriptures.dateAdded = DateTime.Now;
             await _context.SaveChangesAsync();
 
             return RedirectToPage("./Index");
