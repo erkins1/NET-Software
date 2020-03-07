@@ -1,7 +1,9 @@
 ﻿@model MvcMovie.Models.Movie
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Movie Details";
+
+    var imgPath = @"/images/" + Model.Title + ".jpg";
 }
 
 <h1>Details</h1>
@@ -9,6 +11,9 @@
 <div>
     <h4>Movie</h4>
     <hr />
+    <div id="Movie_Poster">
+        <img src="@imgPath" alt="Film Poster" />
+    </div>
     <dl class="row">
         <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Title)
@@ -42,6 +47,7 @@
         </dd>
     </dl>
 </div>
+
 <div>
     <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
     <a asp-action="Index">Back to List</a>
