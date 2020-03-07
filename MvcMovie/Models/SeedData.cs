@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using MvcMovie.Data;
-
+using System;
+using System.Linq;
 
 namespace MvcMovie.Models
 {
@@ -26,39 +23,50 @@ namespace MvcMovie.Models
                 context.Movie.AddRange(
                     new Movie
                     {
-                        Title = "When Harry Met Sally",
-                        ReleaseDate = DateTime.Parse("1989-2-12"),
-                        Genre = "Romantic Comedy",
-                        Price = 7.99M,
-                        Rating = "R"
+                        Title = "God's Army",
+                        ReleaseDate = DateTime.Parse("1999-2-12"),
+                        Genre = "Drama",
+                        Rating = "PG-13",
+                        Price = 7.99M
                     },
 
                     new Movie
                     {
-                        Title = "Ghostbusters ",
-                        ReleaseDate = DateTime.Parse("1984-3-13"),
+                        Title = "17 Miracles",
+                        ReleaseDate = DateTime.Parse("2011-3-13"),
+                        Genre = "Drama",
+                        Rating = "R",
+                        Price = 8.99M
+                    },
+
+                    new Movie
+                    {
+                        Title = "The Singles Ward",
+                        ReleaseDate = DateTime.Parse("2002-2-23"),
                         Genre = "Comedy",
-                        Price = 8.99M,
-                        Rating = "PG"
+                        Rating = "PG",
+                        Price = 9.99M
                     },
 
                     new Movie
                     {
-                        Title = "Ghostbusters 2",
-                        ReleaseDate = DateTime.Parse("1986-2-23"),
+                        Title = "The Singles 2nd Ward",
+                        ReleaseDate = DateTime.Parse("2007-4-15"),
                         Genre = "Comedy",
-                        Price = 9.99M,
-                        Rating = "PG"
+                        Rating = "PG",
+                        Price = 3.99M
                     },
 
                     new Movie
                     {
-                        Title = "Rio Bravo",
-                        ReleaseDate = DateTime.Parse("1959-4-15"),
-                        Genre = "Western",
-                        Price = 3.99M,
-                        Rating = "NR"
+                        Title = "Meet the Mormons",
+                        ReleaseDate = DateTime.Parse("2014-4-15"),
+                        Genre = "Documentary",
+                        Rating = "G",
+                        Price = 1.99M
                     }
+
+
                 );
                 context.SaveChanges();
             }

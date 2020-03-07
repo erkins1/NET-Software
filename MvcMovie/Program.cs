@@ -1,14 +1,10 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using MvcMovie.Data;
 using MvcMovie.Models;
+using System;
 
 namespace MvcMovie
 {
@@ -30,7 +26,6 @@ namespace MvcMovie
                 {
                     var logger = services.GetRequiredService<ILogger<Program>>();
                     logger.LogError(ex, "An error occurred seeding the DB.");
-                    Console.WriteLine("Database was not Seeded!");
                 }
             }
 
