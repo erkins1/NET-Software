@@ -13,7 +13,7 @@ namespace MyScriptureJournal.Models
 
         [Display(Name = "Book")]
         [Required]
-        public int bookName { get; set; }
+        public String bookName { get; set; }
 
         [Display(Name = "Chapter")]
         [Range(1, 100)]

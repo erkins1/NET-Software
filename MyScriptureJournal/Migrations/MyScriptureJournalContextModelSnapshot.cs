@@ -41,8 +41,9 @@ namespace MyScriptureJournal.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("bookName")
-                        .HasColumnType("int");
+                    b.Property<string>("bookName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("chapter")
                         .HasColumnType("integer");

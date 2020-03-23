@@ -22,7 +22,7 @@ namespace MyScriptureJournal
         public IActionResult OnGet()
         {
             IQueryable<Books> typeList = from b in _context.Books select b;
-            BooksOfScripture = new SelectList(typeList, "ID", "Name");
+            BooksOfScripture = new SelectList(typeList, "Name", "Name");
 
             return Page();
         }

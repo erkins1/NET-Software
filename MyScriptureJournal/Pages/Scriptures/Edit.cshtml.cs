@@ -23,8 +23,13 @@ namespace MyScriptureJournal
         [BindProperty]
         public Scriptures Scriptures { get; set; }
 
+        public SelectList BooksOfScripture { get; set; }
+
         public async Task<IActionResult> OnGetAsync(int? id)
         {
+            IQueryable<Books> typeList = from b in _context.Books select b;
+            BooksOfScripture = new SelectList(typeList, "Name", "Name");
+
             if (id == null)
             {
                 return NotFound();

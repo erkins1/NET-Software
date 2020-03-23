@@ -80,4 +80,16 @@ body {
     right: 40%;
 }
 
+body {
+    background-color: #DFFEFE;
+}
 
+nav {
+    background-image: url("/images/straight-filmreel.png");
+    background-size: auto 56px;
+    background-repeat: repeat;
+}
+
+.nav-link, .navbar-brand {
+    color: #F61818!important;
+}

@@ -5,6 +5,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using MyScriptureJournal.Data;
+using System.Text;
+using System.IO;
 
 namespace MyScriptureJournal.Models
 {
@@ -21,52 +23,16 @@ namespace MyScriptureJournal.Models
                     return;   // DB has been seeded
                 }
 
-                context.Books.AddRange(
-                    new Books
-                    {
-                        ID = 1,
-                        Name = "Genesis"
-                    },
-                    new Books
-                    {
-                        ID = 2,
-                        Name = "Exodus"
-                    },
-                    new Books
-                    {
-                        ID = 3,
-                        Name = "Leviticus"
-                    },
-                    new Books
-                    {
-                        ID = 4,
-                        Name = "Numbers"
-                    },
-                    new Books
-                    {
-                        ID = 5,
-                        Name = "Deuteronomy"
-                    },
-                    new Books
-                    {
-                        ID = 6,
-                        Name = "Joshua"
-                    },
-                    new Books
-                    {
-                        ID = 7,
-                        Name = "Judges"
-                    },
-                    new Books
-                    {
-                        ID = 8,
-                        Name = "Ruth"
-                    }
-
-
-                    //Add a bunch more later
-
-                );
+                string[] file = File.ReadLines(@"ListOfScriptures.txt").ToArray();
+                int i = 0;
+                for (i = 0; i < file.Length; i++) {
+                    context.Books.AddRange(
+                        new Books
+                        {
+                            Name = file[i]
+                        }
+                    );
+                }
                 context.SaveChanges();
 
 
