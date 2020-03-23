@@ -31,4 +31,12 @@ namespace MvcMovie.Models
         [Required]
         public string Rating { get; set; }
     }
+
+    public enum Genres
+    {
+        Drama,
+        Comedy,
+        Documentary,
+        Adventure
+    }
 }
